@@ -1,0 +1,9 @@
+  Pseudocode
+1)prompt the user to enter first floating-point number
+2)store as number
+3)prompt the user to enter second floating-point number
+4)store as second_number
+5)check if number is equal to second_number
+6)display result "They are the same"
+7)check if number is not equal to second_number
+8)display result "They are different"

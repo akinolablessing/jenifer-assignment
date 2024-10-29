@@ -3,15 +3,12 @@ import java.util.Scanner;
    public static void main(String[] args){
   Scanner scanner = new Scanner(System.in);
 
-  System.out.print("Input number of terms:");
-     int number = scanner.nextInt();
 
-
-    for(int one=1; one<=9; one++){
-    
-     int multiply = number*one;
+    for(int index=1; index<=9; index++){
+      for(int count=1; count<=9; count++)
      
-    System.out.printf(" %d * %d = %d %n  ",number,one,multiply);
-  }
-}
-}
+      System.out.print(count+ "*" +index+ "=" +index*count+ "\t");
+       System.out.println();
+   }
+ }
+} 

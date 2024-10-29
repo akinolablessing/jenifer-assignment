@@ -1,0 +1,27 @@
+ Pseudocode
+1)initialize name to be "Monday"
+2)initialize name1 to be "Tuesday"
+3)initialize name2 to be "Wednesday"
+4)initialize name3 to be "Tursday"
+5)nitialize name4 to be "friday"
+6)initialize name5 to be "Saturday"
+7)initialize name6 to be "Sunday"
+8)prompt the user to enter a number
+9)collect it
+10)store it as "number"
+11)check for numbers
+12) if number is equal to one
+13)display "Monday"
+14)if number is equal to two
+15)display "Tuesday"
+16) if number is equal to three
+17)display "Wednesday"
+18)if number is equal to four
+19)display "Thursday"
+20)if number is equal to five
+21)display "Friday"
+22)if number is equal to six
+23)display "Saturday"
+24)if number is equal to seven
+25)display "Sunday"
+

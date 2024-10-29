@@ -1,0 +1,8 @@
+  Pseudocode
+1)prompt the user to enter a year
+2)collect it
+3)store it as "year"
+4)check if year % 4 is equal to zero
+5)display "it is a leap year"
+6)check if year % 4 is not equal to zero
+7)display "it is not a leap year"

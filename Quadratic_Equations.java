@@ -12,8 +12,13 @@ double number1 = scanner.nextDouble();
 System.out.print("Input c:");
 double number2 = scanner.nextDouble();
 
-double sum = number(number1*number1-4*number*number2)/2*number;
-System.out.printf("The roots are:%.6f",sum);
+double determine = number1 * number1 - 4 * number * number2;
+
+
+double sumOne =(-number1 + Math.sqrt(determine)/2*number);
+double sumTwo =(-number1 - Math.sqrt(determine)/2*number);
+
+System.out.print("The root are:"+sumOne+ "and"+ sumTwo );
 
    }
  }

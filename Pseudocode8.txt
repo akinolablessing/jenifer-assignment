@@ -1,0 +1,21 @@
+  Pseudocode
+1)initialize first number to be zero
+2)initialize second number to be zero
+3)initialize ques to be null
+4)prompt the user to enter a number
+5)collect it
+6)store it as "first number"
+7)prompt the user to enter another number
+8)collect it
+9)store it as "second number"
+10)check if first number >= second number
+11)display result as "The largest number is first number "
+12)check if first number <= second number
+13)display result as "The smallest number is first number" 
+14)check if second number >= first number
+15)display result as "the largest number is second number"
+16)check if second number<=first number
+17)display result as "The smallest number is second number" 
+18)prompt the user to enter "would you like to perform another one"
+19) check if yes"Continue" 
+20) ckeck if no"Stop" 

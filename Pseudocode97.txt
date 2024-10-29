@@ -1,0 +1,12 @@
+  Pseudocode
+1)prompt the user to enter number of terms 
+2)collect it 
+3)store it as "number"
+4)initialize index to be zero
+5)initialize index to 
+6)initialize index to be <= 5 
+7)calculate it as :
+  number*index
+8)store it as"multiply"
+9) display result "multiply"
+

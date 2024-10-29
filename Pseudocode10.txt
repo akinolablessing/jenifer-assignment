@@ -1,0 +1,8 @@
+ Pseudocode
+Ques: calculate the sum of first natural number
+2) initialize number to zero
+3) initialize index to be one
+4) initialize index to be greater than or equal to ten 
+5) calculate the number as:
+   number= number*index
+6) display "number"

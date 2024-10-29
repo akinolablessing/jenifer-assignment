@@ -1,0 +1,16 @@
+  Pseudocode
+1)initialize number to be zero
+2)initialize number1 to be zero
+3)initialize ques to be null
+4) prompt the user to enter first number
+5) collect it
+6) store it as "number"
+7) prompt the user to enter second number
+8) collect it
+9) store it as "number1" 
+10) calculate the addition of number and number1
+11) store it as "sum"
+12) display result "sum" 
+13) display "Would you like to perform the operation again?"
+14) if yes "Contine"
+15) if no "Stop"

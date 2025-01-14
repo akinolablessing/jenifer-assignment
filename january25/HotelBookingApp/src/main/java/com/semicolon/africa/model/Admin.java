@@ -1,6 +1,5 @@
 package main.java.com.semicolon.africa.model;
 
-import main.java.com.semicolon.africa.model.constant.RoomType;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,7 +14,7 @@ public class Admin {
         this.room.add(room);
 
     }
-    public void setReservations(Booking reservations){
+    public void setBookings(Booking reservations){
         this.bookings.add(reservations);
     }
     public void setGuests(Guest guests){
@@ -23,14 +22,13 @@ public class Admin {
         this.guests.add(guests);
     }
     public ArrayList<Room> getRoom(){
-
         return room;
     }
 
-    public ArrayList<Booking> getReservations(){
-
-        return bookings;
+    public ArrayList<Booking> getBookings(){
+            return bookings;
     }
+
     public ArrayList<Guest> getGuests(){
         return guests;
     }
@@ -41,9 +39,9 @@ public class Admin {
         int secondRandom = new Random().nextInt(100);
         int thirdNumber = new Random().nextInt(210);
 
-        Room firstRoom = new Room(firstRandom, 001, RoomType.SINGLE, 10000, false);
-        Room secondRoom = new Room(secondRandom, 002, RoomType.DOUBLE, 20000, false);
-        Room thirdRoom = new Room(thirdNumber, 003, RoomType.SUITE, 30000, false);
+        Room firstRoom = new Room(firstRandom, 001  ,10000, false);
+        Room secondRoom = new Room(secondRandom, 002, 20000, false);
+        Room thirdRoom = new Room(thirdNumber, 003,  30000, false);
 
         room.add(firstRoom);
         room.add(secondRoom);
@@ -55,6 +53,5 @@ public class Admin {
         return "Admin{" +
                 "room=" + room +
                 '}';
-
     }
 }

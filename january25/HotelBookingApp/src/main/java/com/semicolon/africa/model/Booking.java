@@ -1,6 +1,7 @@
 package main.java.com.semicolon.africa.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Booking {
 
@@ -9,6 +10,7 @@ public class Booking {
     private int startDate;
     private Room room;
     private Guest guest;
+
 
 
     @Override
@@ -22,16 +24,14 @@ public class Booking {
                 '}';
     }
 
-    public Booking(int bookingId
-            , int endDate, int startDate){
+    public Booking(int endDate, int startDate){
 
-       this.bookingId = bookingId;
        this.endDate = endDate;
        this.startDate = startDate;
-
-
     }
-
+    public void setBookingId(int bookingId){
+        this.bookingId = bookingId;
+    }
     public Room getRoom() {
         return room;
     }

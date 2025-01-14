@@ -1,24 +1,21 @@
 package main.java.com.semicolon.africa.model;
 
 
-import main.java.com.semicolon.africa.model.constant.RoomType;
-
 public class Room {
     private int roomId;
     private int roomNumber;
-    private RoomType roomType;
+    private static String roomType;
     private int price;
     private boolean occupancy;
 
 
-    public Room(int roomId, int roomNumber, RoomType roomType , int price, boolean occupancy){
+    public Room(int roomId, int roomNumber, int price, boolean occupancy){
 
         this.roomId = roomId;
         this.roomNumber = roomNumber;
-        this.roomType = roomType;
+        roomType = roomType;
         this.price = price;
         this.occupancy = occupancy;
-
     }
 
         public int getRoomNumber(){
@@ -36,7 +33,7 @@ public class Room {
                 '}';
     }
 
-    public RoomType getRoomType(){
+    public String getRoomType(){
           return roomType;
         }
         public int getPrice (){
@@ -51,5 +48,9 @@ public class Room {
 
         public void setOccupancy(boolean occupancy){
             this.occupancy = occupancy;
+        }
+
+        public static void setRoomType(String roomType){
+        Room.roomType = roomType;
         }
 }

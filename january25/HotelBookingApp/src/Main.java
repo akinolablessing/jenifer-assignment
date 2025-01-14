@@ -12,7 +12,6 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-   static int bookingId = new Random().nextInt(2000);
     static int randomForRoomNumber = new Random().nextInt(3);
 
     static Admin admin = new Admin();
@@ -40,20 +39,20 @@ public class Main {
             int menu = scanner.nextInt();
             switch (menu) {
                 case 1 -> bookRoom();
+                case 2 -> viewBooking();
                 case 6 -> cancelReservation();
                 case 7 -> viewAvailableRooms();
                 case 0 -> mainMenu();
-
             }
-
     }
+
     public static void bookRoom(){
         admin.createRoom();
         System.out.println("""
                 Welcome to Naija Comfort Inn!
-                
+              
                 Please enter your name:
-                """);
+              """);
         String name = scanner.next();
 
         scanner.nextLine();
@@ -87,7 +86,17 @@ public class Main {
                 
                 Room Details:
                 """);
-        Booking booking = new Booking(bookingId, checkOut, localDate.getDayOfMonth());
+        int bookingId = new Random().nextInt(2000);
+        for (Booking booking: admin.getBookings()){
+            if(bookingId == booking.getBookingId()){
+               System.out.println("Booking ID already exist!!");
+            }
+            else{
+                booking.setBookingId(bookingId);
+            }
+        }
+        Booking booking = new Booking(checkOut, localDate.getDayOfMonth());
+        Room.setRoomType(type);
         for (Room room : admin.getRoom()) {
             if(room.isOccupancy()) {
                 System.out.println("Room Number: " + room.getRoomNumber());
@@ -96,16 +105,20 @@ public class Main {
                 int totalPayment = room.getPrice() * night;
                 System.out.println("Total Payment: " + totalPayment);
                 System.out.println("Booking Reference Number: RES" + room.getRoomId());
-                booking.setRoom(room);
                 break;
             }
+            if(!room.isOccupancy()){
+                booking.setRoom(room);
+            }
         }
+
         System.out.printf("Your Check In Date is  %dth , and Check Out Date is %dth%n", localDate.getDayOfMonth(),checkOut);
         guest.setCustomerName(name);
         guest.setCustomerPhoNumber(number);
         guest.setCustomerEmail(emailAddress);
         admin.setGuests(guest);
         booking.setGuest(guest);
+        admin.setBookings(booking);
         System.out.println(admin.getGuests());
         System.out.println(booking);
         System.out.println("""
@@ -116,8 +129,8 @@ public class Main {
         if(decision.equals("yes")){
             mainMenu();
         }
-
     }
+
     public static void cancelReservation() {
         System.out.println("Enter your booking reference number: ");
         int cancel = scanner.nextInt();
@@ -144,6 +157,31 @@ public class Main {
         if(select.equals("yes")){
             mainMenu();
         }
+    }
+
+    public static void viewBooking(){
+
+            System.out.println(admin.getBookings());
+            System.out.println("Enter your Booking Number:");
+            int bookingNumber = scanner.nextInt();
+
+            for(Booking empty: admin.getBookings()){
+                if(bookingNumber == empty.getBookingId()){
+                    System.out.println(empty);
+                }
+
+            }
+
+
+        System.out.println("""
+                    Would you like to go back to manu:
+                    yes/no
+                    """);
+            String back = scanner.next();
+
+            if (back.equals("yes")) {
+                mainMenu();
+            }
 
     }
 }

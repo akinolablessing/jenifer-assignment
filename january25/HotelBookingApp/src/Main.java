@@ -18,8 +18,39 @@ public class Main {
    static Guest guest = new Guest();
 
     public static void main(String[] args) {
+        roleChecking();
+    }
+    public static void roleChecking(){
+        System.out.println("Login as admin or guest:");
+        String adminGuest = scanner.next();
 
-        mainMenu();
+        if(adminGuest.equalsIgnoreCase("admin")) {
+
+            System.out.println("Enter admin password:");
+            String adminPassword = scanner.next();
+            if(adminPassword.equals("admin123")) {
+
+                System.out.println("""
+                        Welcome, Madam Gloria!
+                        
+                        Options:
+                        1. View All Rooms
+                        2. Manage Reservations
+                        3. Generate Reports
+                        4. Mark Rooms for Maintenance
+                        5. Add rooms
+                        6. View guest Details
+                        """);
+                int adminMenu = scanner.nextInt();
+            }
+                else{
+                   System.out.println("Wrong password!!.");
+                    roleChecking();
+                }
+        }
+        if(adminGuest.equalsIgnoreCase("guest")){
+            mainMenu();
+        }
     }
     public static void mainMenu() {
 
@@ -28,23 +59,28 @@ public class Main {
                     Options:
                     1. Book Room
                     2. View Booking
-                    3. Edit Profile
-                    4. Check Room Availability
-                    5. Payment Status
+                    3. Role Checking
+                    4. Calculate Payment
+                    5. Check Room Availability
                     6. Cancel Booking
-                    7. View All Available Room
-                    8. View Notification
-                    0. Go back to manu
+                    7. Payment Status
+                    8. View All Available Room
+                    9. View Notification
+                    10. Go back to manu
                     """);
             int menu = scanner.nextInt();
             switch (menu) {
                 case 1 -> bookRoom();
                 case 2 -> viewBooking();
+                case 3 -> roleChecking();
+                case 4 -> calculatePayment();
+                case 7 -> paymentStatus();
                 case 6 -> cancelReservation();
-                case 7 -> viewAvailableRooms();
+                case 8 -> viewAvailableRooms();
                 case 0 -> mainMenu();
             }
     }
+
 
     public static void bookRoom(){
         admin.createRoom();
@@ -126,7 +162,7 @@ public class Main {
                 yes/no
                 """);
         String decision = scanner.next();
-        if(decision.equals("yes")){
+        if(decision.equalsIgnoreCase("yes")){
             mainMenu();
         }
     }
@@ -154,7 +190,7 @@ public class Main {
                 yes/no
                 """);
         String select = scanner.next();
-        if(select.equals("yes")){
+        if(select.equalsIgnoreCase("yes")){
             mainMenu();
         }
     }
@@ -179,9 +215,87 @@ public class Main {
                     """);
             String back = scanner.next();
 
-            if (back.equals("yes")) {
+            if (back.equalsIgnoreCase("yes")) {
                 mainMenu();
             }
 
+    }
+    public static void paymentStatus(){
+        System.out.println("""
+                Room Pricing During Festive Period:
+                
+                 Single Room: ₦12,000 per night
+                 Double Room: ₦18,000 per night
+                 Suite: ₦30,000 per night
+                """);
+        System.out.println("Would you like to go back to menu: yes/no");
+        String yesNo = scanner.next();
+
+        if (yesNo.equalsIgnoreCase("yes")) {
+            mainMenu();
+        }
+    }
+    public static void calculatePayment(){
+        System.out.println("""
+                Enter room type : Single
+                                  Double
+                                  Suite:
+                """);
+        String  roomType = scanner.next();
+
+        switch (roomType) {
+            case "Single":
+            System.out.println("Enter number of nights: ");
+            int night = scanner.nextInt();
+
+            System.out.println("Is this a festive period? (Yes/No):");
+            String festive = scanner.next();
+            if (festive.equalsIgnoreCase("yes")) {
+
+                int calculation = night * 12000;
+                System.out.println("Price per Night: 12,000");
+                System.out.println("Room Type: "+roomType);
+                System.out.println("Festive Period Surcharge: 20%");
+                System.out.println("Total Payment: "+calculation);
+            }
+            else {
+                bookRoom();
+            }
+            case "Double":
+                System.out.println("Enter number of nights: ");
+                int nightDouble = scanner.nextInt();
+
+                System.out.println("Is this a festive period? (Yes/No):");
+                String festiveDouble = scanner.next();
+                if (festiveDouble .equalsIgnoreCase("yes")) {
+
+                    int calculation = nightDouble * 18000;
+                    System.out.println("Price per Night: 18,000");
+                    System.out.println("Room Type: "+roomType);
+                    System.out.println("Festive Period Surcharge: 20%");
+                    System.out.println("Total Payment: "+calculation);
+                }
+                else {
+                    bookRoom();
+                }
+            case "Suite":
+                System.out.println("Enter number of nights: ");
+                int nightSuite = scanner.nextInt();
+
+                System.out.println("Is this a festive period? (Yes/No):");
+                String festiveSuite = scanner.next();
+                if (festiveSuite .equalsIgnoreCase("yes")) {
+
+                    int calculation = nightSuite * 18000;
+                    System.out.println("Price per Night: 18,000");
+                    System.out.println("Room Type: "+roomType);
+                    System.out.println("Festive Period Surcharge: 20%");
+                    System.out.println("Total Payment: "+calculation);
+                }
+                else {
+                    bookRoom();
+                }
+
+        }
     }
 }

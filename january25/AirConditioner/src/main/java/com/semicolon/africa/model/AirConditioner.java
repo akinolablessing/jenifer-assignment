@@ -1,9 +1,17 @@
 package main.java.com.semicolon.africa.model;
 
 public class AirConditioner {
+    private boolean iHaveAnAc = true;
     private boolean isOn = false;
     private int temperature = 30;
 
+
+    public boolean setIhaveAnAc(){
+        if(this.iHaveAnAc){
+          return this.iHaveAnAc;
+        }
+        return false;
+    }
     public boolean getIsOn(){
         return isOn;
     }
@@ -39,3 +47,4 @@ public int getDecreaseTemperature(){
 }
 
 }
+

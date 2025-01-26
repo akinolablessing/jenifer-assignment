@@ -6,6 +6,11 @@ import static org.junit.Assert.*;
 public class AirConditionerTest {
 
     @Test
+    public void testThatIhaveAnAc(){
+        AirConditioner airConditioner = new AirConditioner();
+        assertTrue(airConditioner.setIhaveAnAc());
+    }
+    @Test
     public void testThatTheACisOff(){
         AirConditioner airConditioner = new AirConditioner();
         assertFalse(airConditioner.getIsOn());

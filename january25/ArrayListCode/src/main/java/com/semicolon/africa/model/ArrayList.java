@@ -2,40 +2,77 @@ package main.java.com.semicolon.africa.model;
 
 
 public class ArrayList {
- private Object [] elements;
+
  private int size ;
+ private Object [] elements = new Object[10];
 
- public ArrayList(int capacity){
-
-     elements = new String[capacity];
-     size = 0;
- }
  public ArrayList(){
-
+     this.size = 0;
  }
+
  public Object[] getElements(){
      return elements;
  }
 
- public void setElement(String[] elements){
-     this.elements = elements;
+public boolean add(String name) {
+    if(name == null || name.isEmpty()){
+        return false;
+    }
+    if(size == elements.length){
+        increaseCapacity();
+    }
+    elements[size] = name;
+    size++;
+    return true;
 
  }
- public int getSize(){
 
-     return size;
- }
- public void setSize(int size){
-    this.size = size;
- }
- public boolean isEmpty(){
-     size = 0;
+    public boolean add(int name) {
+        if(name == 0){
+            return false;
+        }
+        if(size == elements.length){
+            increaseCapacity();
+        }
+        elements[size] = name;
+        size++;
+        return true;
 
+    }
+
+public boolean isEmpty(){
+ if(size == 0) {
      return true;
  }
- public boolean add(String name) {
-   for(int count =0; count <= name.length(); count++){
-
-   }
+ return false;
  }
+
+public void increaseCapacity(){
+    Object[] newArray = new Object[elements.length * 2];
+
+    for(int count = 0; count < elements.length; count++) {
+        newArray[count] = elements[count];
+    }
+    elements = newArray;
+}
+
+public int size(){
+ return size;
+}
+public boolean removeMethod(Object value){
+     if(value == null){
+         return false;
+     }
+
+     if(elements.length > 0){
+         for(int count =0; count < elements.length; count++){
+             if(value == elements[count]) {
+                 size--;
+                 return true;
+             }
+         }
+     }
+        return false;
+}
+
 }

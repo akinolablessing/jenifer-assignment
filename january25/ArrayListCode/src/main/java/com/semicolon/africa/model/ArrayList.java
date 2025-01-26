@@ -10,7 +10,7 @@ public class ArrayList {
      this.size = 0;
  }
 
- public Object[] getElements(){
+ public Object[] getElements(int i){
      return elements;
  }
 

@@ -42,6 +42,15 @@ public void removeMethod(){
     assertEquals(2,arrayList.size());
 
 }
+@Test
+public void sizeMethod(){
+    ArrayList arrayList = new ArrayList();
+    arrayList.add("Ayo");
+    arrayList.add("Blessing");
+    arrayList.add("Joy");
+    assertEquals("joy",arrayList.getElements(2));
+    //assertEquals("joy",arrayList.size());
 
+}
 
 }

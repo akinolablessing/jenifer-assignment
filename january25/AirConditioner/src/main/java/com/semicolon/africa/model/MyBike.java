@@ -5,11 +5,11 @@ public class MyBike {
     private boolean isOn = false;
     private  boolean acceleration = true;
     private int  speed = 0;
-    private int accelerateByGear1 = 20;
-    private int accelerateByGear2 = 30;
+    private int gear = 1;
 
 
-    public boolean setIHaveBike() {
+
+    public boolean setIHaveBike(){
         if(this.iHaveBike){
             return this.iHaveBike;
         }
@@ -17,11 +17,11 @@ public class MyBike {
     }
 
 
-    public boolean getMyBikeIsON() {
+    public boolean getMyBikeIsON(){
         return isOn;
     }
 
-    public boolean setMyBikeIsON() {
+    public boolean setMyBikeIsON(){
         if(!this.isOn){
           this.isOn = true;
           return this.isOn;
@@ -34,38 +34,27 @@ public class MyBike {
       return acceleration;
     }
 
-    public int getIncreseGearOne() {
-        return accelerateByGear1;
 
-        }
-        public void setMyBikeOnGear1() {
-            this.accelerateByGear1 ++;
-            if( this.accelerateByGear1 == 20){
-                this.accelerateByGear1 +=speed;
-
-        }
+    public void setSpeed() {
+        this.speed++;
     }
 
-    public int getDecreaseGearOne() {
-        return accelerateByGear1;
-    }
+    public void setGear() {
+        if(speed >= 1 || speed <= 4){
+          gear++;
+        }
 
-    public void setDecreaseGearOne() {
-        this.accelerateByGear1 --;
-        if(this.accelerateByGear1 == 20){
-
-
+        else if(speed >= 5 || speed <= 8){
+            gear++;
         }
     }
 
-    public int getDecreaseGearTwo() {
-        return accelerateByGear2;
+    public int getGear() {
+      return gear;
     }
-
-    public void setDecreaseGearTwo() {
-        this.accelerateByGear2 -=2;
-        if(this.accelerateByGear2 == 30){
-
-        }
-    }
+ public void setIncreaseAcceleration(){
+     if(gear == 2){
+        speed+=2;
+     }
+ }
 }

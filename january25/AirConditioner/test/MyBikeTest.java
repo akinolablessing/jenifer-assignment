@@ -27,30 +27,34 @@ public class MyBikeTest {
         assertTrue(myBike.getMyBikeCanBeAccelerated());
     }
     @Test
-    public void testThatMyBikeDeccelerateAtGear1DecreamentByOne(){
+    public void testThatMyBikeCanChangeGear(){
         MyBike myBike = new MyBike();
-        myBike.setDecreaseGearOne();
-        myBike.setDecreaseGearOne();
-        myBike.setDecreaseGearOne();
-        assertEquals(myBike.getDecreaseGearOne(),17);
+        myBike.setGear();
+        myBike.setSpeed();
+        myBike.setSpeed();
+        assertEquals(myBike.getGear(),2);
     }
     @Test
-    public void testThatMyBikeAccelerateAtGear1(){
-      MyBike myBike = new MyBike();
-      assertEquals(myBike.getIncreseGearOne(),20);
-    }
-   @Test
-    public void testThatMyBikeDeccelerateAtGear2DecrementByTwo(){
+    public void testThatIncrementGearOne(){
         MyBike myBike = new MyBike();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        myBike.setDecreaseGearTwo();
-        assertEquals(myBike.getDecreaseGearTwo(),14);
-   }
+        myBike.setGear();
+        myBike.setGear();
+        myBike.setSpeed();
+        //myBike.setMyBikeGear();
+        assertEquals(myBike.getGear(),3);
+    }
+ @Test
+    public void testThatIncreaseGearTwo(){
+       MyBike myBike = new MyBike();
+     myBike.setSpeed();
+     myBike.setSpeed();
+     myBike.setSpeed();
+     myBike.setSpeed();
+     myBike.setSpeed();
+     myBike.setSpeed();
+     myBike.setGear();
+        assertEquals(myBike.getGear(),2);
+ }
+
 
 }

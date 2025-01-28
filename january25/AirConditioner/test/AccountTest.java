@@ -2,8 +2,7 @@ import main.java.com.semicolon.africa.model.Account;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class AccountTest {
 
@@ -44,5 +43,17 @@ public class AccountTest {
         Account account = new Account();
         account.depositAmount(100);
         assertEquals(100,account.getBalance());
+   }
+   @Test
+    public void testThatUpdatePin(){
+        Account account = new Account();
+        account.updatePin("1234");
+        assertEquals("1234", account.getPin());
+   }
+   @Test
+    public void testThatUpdatePinIsWrong(){
+        Account account = new Account();
+        account.updatePin("1234");
+        assertFalse(account.confirmPin("4321"));
    }
 }

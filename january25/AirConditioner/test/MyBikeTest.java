@@ -33,20 +33,16 @@ public class MyBikeTest {
     @Test
     public void testThatMyBikeCanChangeGear() {
         MyBike myBike = new MyBike();
-        myBike.setGear();
-        myBike.acceleration();
-        myBike.acceleration();
 
-        assertEquals(myBike.getGear(), 1);
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.setGear();
+        assertEquals(1,myBike.getGear() );
     }
 
     @Test
     public void testThatIncrementGearOne() {
         MyBike myBike = new MyBike();
-
-        myBike.acceleration();
-        myBike.acceleration();
-
         myBike.acceleration();
         myBike.acceleration();
         myBike.acceleration();
@@ -70,7 +66,93 @@ public class MyBikeTest {
         myBike.acceleration();
         myBike.acceleration();
         myBike.setGear();
-        assertEquals(myBike.getGear(), 2);
+        assertEquals(2,myBike.getGear());
+    }
+    @Test
+    public void testThatIncrementGearThree(){
+        MyBike myBike = new MyBike();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+
+
+        myBike.setGear();
+        assertEquals(3,myBike.getGear() );
+    }
+    @Test
+    public void testThatIncrementGearFour() {
+        MyBike myBike = new MyBike();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+        myBike.acceleration();
+
+
+        myBike.setGear();
+        assertEquals(4,myBike.getGear());
     }
 }
 

@@ -51,22 +51,20 @@ public class MyBike {
           this.gear = 1;
         }
 
-        if(speed >= 21 & speed <= 30){
+        if(this.speed >= 21 & this.speed <= 30){
             this.gear = 2;
         }
 
-        if(speed >= 31 & speed <= 40){
-            this.gear = 3;
+        if(this.speed >= 31 & this.speed <= 40){
+            this.gear =3;
+        }
+        if(this.speed > 40){
+           this.gear = 4;
         }
     }
 
     public int getGear() {
       return gear;
     }
- public int setIncreaseAcceleration(){
-     if(gear == 2){
-        speed+=2;
-     }
-     return speed+=2;
- }
+
 }

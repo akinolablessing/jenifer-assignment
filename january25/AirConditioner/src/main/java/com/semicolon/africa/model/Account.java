@@ -5,12 +5,12 @@ public class Account {
     private String number;
     private int balance ;
     private String customerName;
-    //private String updateBalance ;
+    private String pin ;
     private String customerGmail;
     private String customerPhoneNumber;
 
 
-    public boolean iHaveAnAccount() {
+    public boolean iHaveAnAccount(){
         return iHaveAnAccount;
     }
     public void depositAmount(int depositeMoney){
@@ -25,6 +25,19 @@ public class Account {
             return balance;
         }
 
+    }
+    public String getPin(){
+        return pin;
+    }
+    public void updatePin(String pin) {
+        this.pin = pin;
+
+    }
+    public boolean confirmPin(String userPin) {
+        if(this.pin.equals(userPin)){
+           return false;
+        }
+        return false;
     }
     public int checkBalance() {
         return this.balance;
@@ -64,4 +77,11 @@ public class Account {
         balance+=amount;
         return amount;
     }
+
+
+
+
+    //public Account(String firstName, String lastName, String pin){
+
+    //}
 }

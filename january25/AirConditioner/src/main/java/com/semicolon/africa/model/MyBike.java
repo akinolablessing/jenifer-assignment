@@ -17,7 +17,7 @@ public class MyBike {
     }
 
 
-    public boolean getMyBikeIsON(){
+    public boolean getMyBikeIsOff(){
         return isOn;
     }
 
@@ -34,27 +34,39 @@ public class MyBike {
       return acceleration;
     }
 
+    public int getSpeed(){
+        return speed;
+    }
 
-    public void setSpeed() {
+    public void acceleration() {
         this.speed++;
     }
 
+    public void decelerate(){
+        this.speed--;
+    }
+
     public void setGear() {
-        if(speed >= 1 || speed <= 4){
-          gear++;
+        if(this.speed >= 0 & this.speed <= 20){
+          this.gear = 1;
         }
 
-        else if(speed >= 5 || speed <= 8){
-            gear++;
+        if(speed >= 21 & speed <= 30){
+            this.gear = 2;
+        }
+
+        if(speed >= 31 & speed <= 40){
+            this.gear = 3;
         }
     }
 
     public int getGear() {
       return gear;
     }
- public void setIncreaseAcceleration(){
+ public int setIncreaseAcceleration(){
      if(gear == 2){
         speed+=2;
      }
+     return speed+=2;
  }
 }

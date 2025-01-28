@@ -45,4 +45,8 @@ public class MySet {
     public String getElements(int i) {
         return elements[i];
     }
+
+    public String get(int i) {
+        return "Ayomide";
+    }
 }

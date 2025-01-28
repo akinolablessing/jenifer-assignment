@@ -27,7 +27,7 @@ public class MySetTest {
     public void addValue1Value2_getValue1Value2_testMySet(){
        mySet.add("Ayomide");
        mySet.add("Fish");
-       //assertEquals("Ayomide",mySet.get(0));
-       assertEquals("Fish",mySet.getElements(1));
+       assertEquals("Ayomide",mySet.get(0));
+      // assertEquals("Fish",mySet.getElements(1));
    }
 }

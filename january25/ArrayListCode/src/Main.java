@@ -12,4 +12,7 @@ public class Main {
             System.out.println("i = " + i);
         }
     }
+    //String lastName = input("Enter your last name: ");
+    // int amount = Integer.parseInt(input("Enter your amount: "));
+    // bank.Amount(amount);
 }

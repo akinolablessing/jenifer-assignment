@@ -2,7 +2,7 @@ package main.java.com.semicolon.africa.model;
 
 public class MyMap {
     private int size;
-    private ArrayList values = new ArrayList();
+    private MyArrayList values = new MyArrayList();
     private MySet keys = new MySet();
     public boolean isEmpty(){
         return true;

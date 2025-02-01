@@ -1,12 +1,12 @@
 package main.java.com.semicolon.africa.model;
 
 
-public class ArrayList {
+public class MyArrayList {
 
  private int size ;
  private Object [] elements = new Object[10];
 
- public ArrayList(){
+ public MyArrayList(){
      this.size = 0;
  }
 

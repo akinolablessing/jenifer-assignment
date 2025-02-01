@@ -70,11 +70,11 @@ public class BankApp {
      //String bankAccountNumber = scanner.nextLine();
         System.out.print("Do u want to confirm your accountPin or have access to order choices? Yes/No: ");
         String confirmPin = scanner.nextLine();
-        switch (confirmPin) {
-            case "Yes":
+        switch (confirmPin.toLowerCase()) {
+            case "yes":
                 showMainMenu();
                 break;
-                case "No":
+                case "no":
                 System.out.print("Have a nice day? : ");
         }
      Bank bank = new Bank(fName,lName,pinCode,rand,bankAccountNumber);
@@ -95,8 +95,8 @@ public class BankApp {
     public static void depositMoney() {
         System.out.print("Do you have an account before? Yes/No: ");
         String question = scanner.nextLine();
-        switch (question){
-            case "Yes":
+        switch (question.toLowerCase()){
+            case "yes":
                 System.out.print("Enter your pin code: ");
                 String quesPin = scanner.nextLine();
                 if(quesPin.equals(pinCode)){
@@ -114,14 +114,14 @@ public class BankApp {
 
                 }
                 break;
-            case "No":
+            case "no":
                 System.out.print("Dear customer, Kindly create an account before you can deposit: ");
                break;
         }
         System.out.print("Would u like to continue? Yes/No: ");
         String choise = scanner.nextLine();
-        switch (choise){
-            case "Yes":
+        switch (choise.toLowerCase()){
+            case "yes":
                 showMainMenu();
                 break;
         }
@@ -150,8 +150,8 @@ public class BankApp {
             }
         System.out.println("Would u like to continue? Yes/No: ");
         String chois = scanner.nextLine();
-        switch (chois){
-            case "Yes":
+        switch (chois.toLowerCase()){
+            case "yes":
                 showMainMenu();
                 break;
         }

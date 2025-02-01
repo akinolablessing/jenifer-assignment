@@ -1,3 +1,7 @@
+import main.java.com.semicolon.africa.model.Diaries;
+import main.java.com.semicolon.africa.model.Diary;
+import main.java.com.semicolon.africa.model.Entry;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -11,8 +15,10 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
+
     }
     //String lastName = input("Enter your last name: ");
     // int amount = Integer.parseInt(input("Enter your amount: "));
     // bank.Amount(amount);
+
 }

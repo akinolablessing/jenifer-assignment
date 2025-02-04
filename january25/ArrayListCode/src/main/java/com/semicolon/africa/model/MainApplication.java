@@ -24,6 +24,9 @@ public class MainApplication {
     static String pinForUnlock = "";
     static String nameForLock = "";
     static String pinForLock = "";
+    static  String title = "";
+    static String body = "";
+
 
     public static void mainMenu() {
         System.out.println("Today's date is: " + LocalDate.now());
@@ -33,6 +36,7 @@ public class MainApplication {
                        2. Lock Diary
                        3. Unlock Diary
                        4. Create Entry
+                       5. Find Entry By ID
                        0. Exit
                 """);
         switch (diaryMenu) {
@@ -47,10 +51,13 @@ public class MainApplication {
             case "4":
                 createEntry();
                 break;
-            //case "0":
-            //  mainMenu();
-            // break;
 
+            case "5":
+                findEntryById();
+                break;
+            case "0":
+                mainMenu();
+                break;
         }
 
 
@@ -155,16 +162,26 @@ public class MainApplication {
                     System.out.println("This is your id number: "+random);
 
                     System.out.println("Enter the title: ");
-                    String title = scanner.nextLine();
+                     title = scanner.nextLine();
 
                     System.out.println("Enter the Body: ");
-                    String body = scanner.nextLine();
+                     body = scanner.nextLine();
 
                     System.out.println("This entry was created on : " + LocalDate.now());
                     Entry entry = new Entry(random, title, body);
                     Diary diary = new Diary();
                     diary.saveEntry(entry);
                     System.out.println(diary);
+
+                    System.out.println("Would you like to go back to menu for other choices? Yes/No: ");
+                    String choicee = scanner.nextLine();
+                    switch (choicee.toLowerCase()) {
+                        case "yes":
+                            mainMenu();
+                            break;
+                        case "no":
+                            break;
+                    }
                     // } else {
                     // System.out.println("No diary found!");
                     // }
@@ -179,6 +196,25 @@ public class MainApplication {
 
         }
 
+    }
+    public static void findEntryById(){
+        System.out.println("Enter your id number: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        if(random == id){
+          System.out.println("title: "+title+"~~~~ body: "+body);
+        }
+        else{
+            System.out.println("The Id number is incorrect!");
+        }
+        System.out.println("Would you like to go back to menu for other choices? Yes/No: ");
+        String choicee = scanner.nextLine();
+        switch (choicee.toLowerCase()) {
+            case "yes":
+                mainMenu();
+                break;
+            case "no":
+                break;
+        }
     }
 
 }

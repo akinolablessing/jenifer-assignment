@@ -2,6 +2,7 @@ package main.java.com.semicolon.africa.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Diary {
 private String username;
@@ -19,7 +20,6 @@ ArrayList<Entry> entries = new ArrayList<>();
     public Diary(){
 
     }
-
 
    public void setLocked(boolean isLocked) {
         this.isLocked = isLocked;
@@ -111,4 +111,13 @@ ArrayList<Entry> entries = new ArrayList<>();
         }
         return entries;
     }
+
+    @Override
+    public String toString() {
+        return this.username + this.entries.toString()
+                +this.iHaveDiary + this.isEmptyDiary
+                +this.entries.toString()+ this.password
+                +this.isEmptyDiary + this.isLocked();
+    }
+
 }

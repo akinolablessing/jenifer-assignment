@@ -39,5 +39,15 @@ public class Entry {
  public void setDateCreated(LocalDateTime dateCreated) {
         this.dateCreated = dateCreated;
  }
+
+    @Override
+    public String toString() {
+        return "Entry{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                ", dateCreated=" + dateCreated +
+                '}';
+    }
 }
 

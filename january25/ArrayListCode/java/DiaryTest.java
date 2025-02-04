@@ -28,13 +28,42 @@ public class DiaryTest {
    }
    @Test
     public void testThatCreateEntry(){
-       Diary diary = new Diary("Ayomide","1234");
-       diary.setPassword("1234");
+       Entry entry = new Entry(1, "My Story","I love myself");
+       assertNotNull(entry);
+
    }
    @Test
-    public void testThatCreateDiaryEntry(){
+    public void testThatSaveDiaryEntry(){
+       Entry entry = new Entry(1, "My Story","I love myself");
        Diary diary = new Diary();
-       diary.createEntry();
+       diary.saveEntry(entry);
+       assertTrue(diary.saveEntry(entry));
 
+   }
+   @Test
+    public void testThatDeleteDiaryEntry(){
+       Diary diary = new Diary();
+       Entry entry = new Entry(1, "My Story","I love myself");
+       diary.saveEntry(entry);
+       assertTrue(diary.deleteEntry(entry));
+   }
+   @Test
+    public void testThatFindEntryById(){
+       Diary diary = new Diary();
+       Entry entry = new Entry(1, "My Story","I love myself");
+       Entry entry1 = new Entry(2, "My Sty","I love mlf");
+       diary.saveEntry(entry);
+       diary.saveEntry(entry1);
+       assertEquals(entry,diary.findEntryById(entry));
+   }
+   @Test
+    public void testThatUpdateDiaryEntry(){
+       Diary diary = new Diary();
+       Entry entry = new Entry(1, "My Story","I love myself");
+       Entry entry1 = new Entry(2, "My Story","I love self");
+       Entry entry2 = new Entry(3, "My Story","I love myself,I love self");
+       diary.saveEntry(entry);
+       diary.updateDiary(entry2);
+       assertEquals(entry2,diary.findEntryById(entry2));
    }
 }

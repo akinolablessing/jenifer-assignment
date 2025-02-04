@@ -16,7 +16,7 @@ public class BankApp {
     static int money = 0;
     static int amount = 0;
     public static void showMainMenu() {
-        String firstName = input("""
+        String firstName = input("""                
                 BankApp Main Menu:
                 1. Create Bank Account
                 2. Confirm pin

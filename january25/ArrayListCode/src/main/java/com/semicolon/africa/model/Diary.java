@@ -1,6 +1,7 @@
 package main.java.com.semicolon.africa.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Diary {
 private String username;
@@ -8,7 +9,7 @@ private String password;
 private boolean isLocked = true;
 private boolean iHaveDiary = true;
 private boolean isEmptyDiary = true;
-
+ArrayList<Entry> entries = new ArrayList<>();
 
     public Diary(String username, String password) {
         this.username = username;
@@ -19,11 +20,6 @@ private boolean isEmptyDiary = true;
 
     }
 
-    public void createEntry(String content, LocalDate time, String title){
-        this.content = content;
-        this.time = time;
-        this.title = title;
-    }
 
    public void setLocked(boolean isLocked) {
         this.isLocked = isLocked;
@@ -54,6 +50,7 @@ private boolean isEmptyDiary = true;
     public void setPassword(String pinCode) {
       this.password = pinCode;
     }
+
     public String getPassword() {
         return password;
     }
@@ -70,5 +67,48 @@ private boolean isEmptyDiary = true;
         }
         return true;
     }
+    public boolean saveEntry(Entry entry){
+        this.entries.add(entry);
+        if(this.entries.size() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
+    public boolean deleteEntry(Entry entry1) {
+        for (Entry entry : entries) {
+            if (entry.getId() == entry1.getId()) {
+                entries.remove(entry1);
+                return true;
+            }
+            if (entries.contains(entry)) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+
+    public Entry findEntryById(Entry entry2) {
+      for (Entry entryTwo : entries) {
+          if(entryTwo.getId() == entry2.getId()){
+            return entryTwo;
+          }
+      }
+
+        return entry2;
+    }
+
+    public Object updateDiary(Entry entry) {
+        for(Entry entry2 : entries){
+          if(entry2.getId() == entry.getId()){
+            entry2.setTitle(entry.getTitle());
+            entry2.setBody(entry.getBody());
+            entries.add(entry2);
+          }
+        }
+        return entries;
+    }
 }

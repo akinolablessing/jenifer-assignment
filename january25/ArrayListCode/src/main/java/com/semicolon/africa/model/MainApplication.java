@@ -23,62 +23,72 @@ public class MainApplication {
     static String nameForUnlock = "";
     static String pinForUnlock = "";
     static String nameForLock = "";
-    static String pinForLock = "";
+    static String  pinForLock = "";
     static  String title = "";
     static String body = "";
 
 
     public static void mainMenu() {
         System.out.println("Today's date is: " + LocalDate.now());
-        String diaryMenu = input("""  
-                       Welcome to the Diary Menu Application!!
-                       1. Create a new diary
-                       2. Lock Diary
-                       3. Unlock Diary
-                       4. Create Entry
-                       5. Find Entry By ID
-                       0. Exit
-                """);
-        switch (diaryMenu) {
-            case "1":
-                createDiary();
-                break;
-            case "2":
-                lockDiary();
-                break;
-            case "3":
-                unlockDiary();
-            case "4":
-                createEntry();
-                break;
+        try {
+            System.out.println("""  
+                           Welcome to the Diary Menu Application!!
+                           1. Create a new diary
+                           2. Lock Diary
+                           3. Unlock Diary
+                           4. Create Entry
+                           5. Find Entry By ID
+                           0. Exit
+                    """);
+            int  diaryMenu = scanner.nextInt();
+            switch (diaryMenu) {
+                case 1:
+                    createDiary();
+                    break;
+                case 2:
+                    lockDiary();
+                    break;
+                case 3:
+                    unlockDiary();
+                case 4:
+                    createEntry();
+                    break;
 
-            case "5":
-                findEntryById();
-                break;
-            case "0":
-                mainMenu();
-                break;
+                case 5:
+                    findEntryById();
+                    break;
+                case 6:
+                    mainMenu();
+                    break;
+            }
+        }
+        catch (Exception e) {
+            System.out.println(" Is not an integer, please try again");
         }
 
 
     }
 
-    private static String input(String prompt) {
-        System.out.print(prompt);
-        return new Scanner(System.in).nextLine();
-    }
-
-    private static void print(String prompt) {
-        System.out.println(prompt);
-    }
+//    private static String input(String prompt) {
+//        System.out.print(prompt);
+//        return new Scanner(System.in).nextLine();
+//    }
+//
+//    private static void print(String prompt) {
+//        System.out.println(prompt);
+//    }
 
     public static void createDiary() {
         try {
            System.out.println("Fill in your details to create a new diary ");
             System.out.println("Enter your name: ");
-            name = scanner.nextLine();
+            name = scanner.next();
+
             System.out.println("Enter your pin: ");
-            pin = scanner.nextLine();
+            pin = scanner.next();
+            if(pin.length() > 4){
+              System.out.println("It should not be more than 4 numbers!:");
+            }
             System.out.println("Would you like to go back to menu for other choices? Yes/No: ");
             String choice = scanner.nextLine();
             switch (choice.toLowerCase()) {
@@ -99,6 +109,9 @@ public class MainApplication {
         nameForLock = scanner.nextLine();
         System.out.println("Enter your pin: ");
         pinForLock = scanner.nextLine();
+         if(pinForLock.length() > 4){
+           System.out.println("It should not be more than 4 numbers!");
+        }
 
         if (name.equals(nameForLock) && pin.equals(pinForLock)) {
             System.out.println("Your diary is locked!");

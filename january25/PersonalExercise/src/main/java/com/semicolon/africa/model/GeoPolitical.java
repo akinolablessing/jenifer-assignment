@@ -8,10 +8,10 @@ public enum GeoPolitical {
     SOUTH_SOUTH("Akwa-Ibom","Bayelsa","Cross-River","Delta","Edo","Rivers"),
     SOUTH_WEST("Ekiti","Lagos","Osun","Ondo","Ogun","Oyo");
 
-    String[] stateOne;
+    String[] state;
 //    String stateTwo;
-    GeoPolitical(String... stateOne){
-       this.stateOne = stateOne;
+    GeoPolitical(String... state){
+       this.state = state;
 //       this.stateTwo = stateTwo;
     }
 }

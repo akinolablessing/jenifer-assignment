@@ -14,4 +14,9 @@ public class Problem {
     public boolean getIsSolved() {
         return isSolved;
     }
+
+    public void add(Problem food) {
+        listOfProblem.add(food);
+
+    }
 }

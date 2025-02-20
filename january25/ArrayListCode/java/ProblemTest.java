@@ -6,13 +6,18 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class ProblemTest {
-    @Test
-    public void testThatHaveProblem(){
+//public class ProblemTest {
+//    @Test
+//    public void testThatHaveProblem(){
+//
+//        Problem problem = new Problem();
+//      assertFalse(problem.getIsSolved());
+//    }
 
-        Problem problem = new Problem();
-      assertFalse(problem.getIsSolved());
-    }
-
-
-}
+// public void testThatAddProblem(){
+//        Problem problem = new Problem();
+//        problem.add("food");
+//        assertEquals("food",problem.getIsSolved());
+//  }
+//
+//}

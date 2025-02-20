@@ -10,9 +10,9 @@ public class GoePoliticalMenu {
       String stateName = scanner.nextLine();
 
     for(GeoPolitical states : GeoPolitical.values()){
-     //System.out.println(states);
+//     System.out.println(states);
         for (String state : states.state){
-            //System.out.println(state);
+//            System.out.println(state);
             if(stateName.equalsIgnoreCase(state)){
               System.out.println("Your geo political zone is "+states);
             }

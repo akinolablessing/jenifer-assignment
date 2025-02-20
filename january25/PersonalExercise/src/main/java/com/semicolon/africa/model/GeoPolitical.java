@@ -9,9 +9,9 @@ public enum GeoPolitical {
     SOUTH_WEST("Ekiti","Lagos","Osun","Ondo","Ogun","Oyo");
 
     String[] state;
-//    String stateTwo;
+
     GeoPolitical(String... state){
        this.state = state;
-//       this.stateTwo = stateTwo;
+
     }
 }

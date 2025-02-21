@@ -7,6 +7,6 @@ public class Motorcycle extends Vehincle {
       System.out.println("Motor start with turtle");
     }
     public void stopEngine(){
-      System.out.println("\"Motorcycle engine stopped when ignition was turned off.");
+      System.out.println("Motorcycle engine stopped when ignition was turned off.");
     }
 }

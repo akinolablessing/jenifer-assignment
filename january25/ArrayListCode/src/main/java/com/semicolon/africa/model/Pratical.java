@@ -40,9 +40,9 @@ public class Pratical {
         System.out.println("|"+(segments[1]? " _ ": " ")+"|");
         System.out.println("|" +(segments[2]? "_" : " " +"|"));
         System.out.println(" "+(segments[3]? "_" : ""));
-//        System.out.println("|"+(segments[4]? " _ ": " ")+"|");
-//        System.out.println("|" +(segments[5]? "_" : " " +"|"));
-//        System.out.println(" "+(segments[6]? "_" : ""));
+        System.out.println("|"+(segments[4]? " _ ": " ")+"|");
+        System.out.println("|" +(segments[5]? "_" : " " +"|"));
+        System.out.println(" "+(segments[6]? "_" : ""));
     }
     public static void main(String[] args){
         Pratical pratical = new Pratical();

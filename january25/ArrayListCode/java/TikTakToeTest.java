@@ -1,11 +1,4 @@
-import main.java.com.semicolon.africa.model.Tiktaktoe;
-import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
+package PACKAGE_NAME;
 
 public class TikTakToeTest {
-//  @Test
-//  public void testThatCreateSpaceForXandO(){
-//      Tiktaktoe tiktaktoe = new Tiktaktoe();
-//
 }

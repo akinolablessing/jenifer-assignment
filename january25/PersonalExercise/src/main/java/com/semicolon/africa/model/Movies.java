@@ -1,34 +1,34 @@
 package main.java.com.semicolon.africa.model;
 
 public class Movies {
-    private static String title;
-    private static String director;
-    private static int duration;
+    private String title;
+    private int year;
+    private int rate;
+
+    public Movies(String title, int year, int rate) {
+        this.title = title;
+        this.year = year;
+        this.rate = rate;
+    }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getYear() {
+        return year;
     }
 
-    public String getDirector() {
-        return director;
+    public int getRate() {
+        return rate;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-    public static String getMovieDetails(){
-        return "Movie!! Title : "+title+" Director : "+ director+ " Duration :"+duration;
+    @Override
+    public String toString() {
+        return "Movies{" +
+                "movie='" + title + '\'' +
+                ", year=" + year +
+                ", rate=" + rate +
+                '}';
     }
 }

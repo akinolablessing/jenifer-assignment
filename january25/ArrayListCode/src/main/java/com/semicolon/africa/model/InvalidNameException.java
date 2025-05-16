@@ -1,7 +1,7 @@
 package main.java.com.semicolon.africa.model;
 
-public class Exceptions extends Exception{
-    public void invalidNameException(String message){
+public class InvalidNameException extends Exception{
+    public  InvalidNameException(String message){
         super(message);
     }
 }

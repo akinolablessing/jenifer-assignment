@@ -81,4 +81,16 @@ public String getPinCode(){
         }
     }
     }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pinCode='" + pinCode + '\'' +
+                ", balance=" + balance +
+                ", accountNumber=" + accountNumber +
+                ", userAccountNumber='" + userAccountNumber + '\'' +
+                '}';
+    }
 }
